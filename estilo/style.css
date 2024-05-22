@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+
+/*root é uma pseudoclasse que é a raiz do site, onde você pode por todas as configurações com nomes mais simples para agilizar o processo de personalização*/
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive;
+    --fonte3: 'Sriracha', cursive;
+}
+
+/*Configurações universais*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    background-color: gray;
+
+    /*Ocupa 100% da altura, deixa a página adaptativa*/
+    min-height: 100vh;
+    /*Para usar uma configuração salva em root coloca-se (var(nome que você pós)*/
+    font-family: var(--fonte1);
+}
+
+
+header {
+    background-color: black;
+    text-align: center;
+    color: white;
+    /*Para deixar a página adptativa*/
+    margin: auto;
+}
+
+header > h1 {
+    font-family: "Passion One", sans-serif;
+    font-weight: bold;
+    padding: 50px 0px 0px 0px;
+
+    font-variant: small-caps; /*Letras maiúsculas mas as primeiras letras ficam maior*/
+    
+    /*Usando vh, você configura que a letra sempre será 10% da viewport, isso faz com que o texto se adapte a tamanho de telas diferentes*/
+    font-size: 10vw;
+
+
+    font-family: var(--fonte2);
+}
+
+header > p {
+    font-family: "Sriracha", cursive;
+    font-size: 12px;
+    padding-bottom: 50px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/*Configurações para todos os section*/
+section {
+    /*Cria uma espaço entre as section, 10% da altura para cima e para baixo*/
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+    /*Separação entre as linhas*/
+    line-height: 2em;
+    
+    padding-left: 30px;
+    font-family: var(--fonte3);
+    font-size: 3vw;
+}
+
+
+section.normal {
+    background-color: white;
+    color: black;
+}
+
+section.imagem1 {
+    background-color: rgb(39, 37, 37);
+    background-image: url(imagens/background001.jpg);
+    background-repeat: no-repeat;
+
+    /*Cobre toda a área com uma imagem adaptativa a tamanhos diferentes de tela*/
+    background-size: cover;
+
+    /*Fixa a imagem no fundo da página, impede a rolagem*/
+    /*Permite o efeito parallax*/
+    background-attachment: fixed;
+
+    /*Seleciona uma posição da imagem para focar a exibição*/
+    background-position: right center;
+
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.468);
+    color: white;
+}
+
+section.imagem2 {
+    background-color: rgb(24, 23, 23);
+    background-image: url(imagens/background002.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: right center;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.468);
+    color: white;
+}
+
+
+/*Configuração para os parágrafos dentro das seções com classe imagem */
+section.imagem1 > p {
+    background-color: rgba(0, 0, 0, 0.371);
+    
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.404);
+    padding: 10px;
+    /*Largura da caixa*/
+    display: inline-block;
+    padding-left: 10px;
+}
+
+section.imagem2 > p {
+    background-color: rgba(0, 0, 0, 0.371);
+    
+    padding: 10px;
+    /*Largura da caixa*/
+    display: inline-block;
+    padding-left: 10px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.411);
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
